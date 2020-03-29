@@ -6,6 +6,7 @@ const webpack = require("webpack");
 module.exports = {
   devServer: {
     contentBase: "./dist",
+    historyApiFallback: true,
     hot: true,
   },
   devtool: "source-map",
