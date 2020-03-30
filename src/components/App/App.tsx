@@ -1,4 +1,5 @@
 import * as React from "react";
+import { CookiesProvider } from "react-cookie";
 import {
   BrowserRouter as Router,
   NavLink,
@@ -6,7 +7,7 @@ import {
   Switch,
 } from "react-router-dom";
 
-import { ComponentA } from "components/ComponentA";
+import ComponentA from "components/ComponentA";
 import { ComponentB } from "components/ComponentB";
 
 const App = (): JSX.Element => (
@@ -33,7 +34,9 @@ const App = (): JSX.Element => (
       </Route>
 
       <Route path="/componentA">
-        <ComponentA />
+        <CookiesProvider>
+          <ComponentA />
+        </CookiesProvider>
       </Route>
       <Route path="/componentB">
         <ComponentB />

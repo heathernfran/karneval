@@ -1,1 +1,5 @@
-export { default as ComponentA } from "./ComponentA";
+import { withCookies } from "react-cookie";
+
+import ComponentA from "./ComponentA";
+
+export default withCookies(ComponentA);
