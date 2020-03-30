@@ -1,23 +1,14 @@
 import * as React from "react";
+import { useCookies } from "react-cookie";
 
-interface Props {
-  cookies?: {
-    get: (arg0: string) => string;
-    set: (arg0: string, arg1: string) => void;
-  };
-}
-
-const ComponentA = ({ cookies }: Props): JSX.Element => {
-  const [isDismissed, setIsDismissed] = React.useState(false);
+const ComponentA = (): JSX.Element => {
+  const [cookies, setCookies] = useCookies(["dismissed"]);
 
   const handleDismiss = (): void => {
-    cookies.set("dismissed", "dismissed");
-
-    setIsDismissed(true);
+    setCookies("dismissed", "dismissed");
   };
 
-  if (isDismissed || (cookies && cookies.get("dismissed")))
-    return <span>Cookies are set</span>;
+  if (cookies && cookies.dismissed) return <span>Cookies are set</span>;
 
   return (
     <div>
