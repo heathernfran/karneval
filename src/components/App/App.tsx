@@ -10,22 +10,32 @@ import {
 import ComponentA from "components/ComponentA";
 import { ComponentB } from "components/ComponentB";
 
+import "bulma/css/bulma.min.css";
+
 const App = (): JSX.Element => (
   <Router>
-    <h1>React Components</h1>
+    <section className="hero is-primary">
+      <div className="hero-body">
+        <div className="container">
+          <h1 className="title">React Components</h1>
+        </div>
+      </div>
+    </section>
 
     <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/componentA">Component A</NavLink>
-        </li>
-        <li>
-          <NavLink to="/componentB">Component B</NavLink>
-        </li>
-      </ul>
+      <div className="container">
+        <ul className="columns">
+          <li className="column">
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li className="column">
+            <NavLink to="/componentA">Component A</NavLink>
+          </li>
+          <li className="column">
+            <NavLink to="/componentB">Component B</NavLink>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <Switch>
