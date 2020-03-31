@@ -24,6 +24,10 @@ module.exports = {
         use: "ts-loader",
       },
       {
+        test: /\.css$/,
+        loader: "style-loader!css-loader",
+      },
+      {
         exclude: /node_modules/,
         test: /\.(jpe?g|png|svg)$/,
         use: [

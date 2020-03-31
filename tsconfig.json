@@ -11,7 +11,7 @@
       "dux/*": ["src/dux/*"],
       "lib/*": ["src/lib/*"]
     },
-    "rootDir": "src",
+    "rootDirs": ["__mocks__", "src"],
     "sourceMap": true,
     "target": "es5"
   }
